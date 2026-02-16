@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lavkush Nishad | Software Engineer Portfolio</title>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 20px 60px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .hero span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+        }
+
+        .hero-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        /* ===== SECTION ===== */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section h3 {
+            font-size: 26px;
+            margin-bottom: 25px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about p {
+            max-width: 800px;
+            color: var(--gray);
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .skill-card h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* ===== PROJECTS ===== */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .project-card h4 {
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact p {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* ===== ANIMATION ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h1>Lavkush Nishad</h1>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero fade-in">
+    <h2>Aspiring <span>Software Engineer</span></h2>
+    <p>
+        B.Tech Computer Science student with strong foundations in Data Structures,
+        Web Development, and problem-solving. Actively preparing for campus
+        placements and technical interviews.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+        <a href="#" class="btn btn-outline">Download Resume</a>
+    </div>
+</section>
+
+<section id="about" class="about fade-in">
+    <h3>About Me</h3>
+    <p>
+        I am a motivated Computer Science Engineering student with hands-on
+        experience in building full-stack web applications and solving algorithmic
+        problems. I focus on writing clean, efficient code and continuously
+        improving my technical and problem-solving skills for software engineering
+        roles.
+    </p>
+</section>
+
+<section id="skills" class="fade-in">
+    <h3>Technical Skills</h3>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h4>Programming Languages</h4>
+            <p>C, C++, Python, JavaScript</p>
+        </div>
+        <div class="skill-card">
+            <h4>Web Technologies</h4>
+            <p>HTML, CSS, JavaScript, React (Basics)</p>
+        </div>
+        <div class="skill-card">
+            <h4>Backend & Databases</h4>
+            <p>Node.js (Basics), PHP, MongoDB, MySQL</p>
+        </div>
+        <div class="skill-card">
+            <h4>Core CS</h4>
+            <p>Data Structures & Algorithms, OOP, DBMS</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="fade-in">
+    <h3>Projects</h3>
+    <div class="projects">
+        <div class="project-card">
+            <h4>Logistics & Delivery Tracking Portal</h4>
+            <p>
+                Designed and developed a web portal to track deliveries using
+                HTML, Tailwind CSS, JavaScript, and PHP, improving order visibility
+                and management efficiency.
+            </p>
+        </div>
+        <div class="project-card">
+            <h4>Student Management System</h4>
+            <p>
+                Built a CRUD-based student management system using PHP and MySQL
+                with proper OOP principles and form validation.
+            </p>
+        </div>
+        <div class="project-card">
+            <h4>Personal Portfolio Website</h4>
+            <p>
+                Created a responsive portfolio website to showcase skills and
+                projects using modern UI principles.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact fade-in">
+    <h3>Contact</h3>
+    <p>Email: lavkush@example.com</p>
+    <p>GitHub: github.com/lavkush</p>
+    <p>LinkedIn: linkedin.com/in/lavkush</p>
+</section>
+
+<footer>
+    © <span id="year"></span> Lavkush Nishad
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const elements = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

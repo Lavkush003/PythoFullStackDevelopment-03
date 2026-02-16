@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Blogs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef1f5;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #007bff;
+            padding: 15px 20px;
+            border-radius: 6px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            background: white;
+            color: #007bff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            background: #e6e6e6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .blog {
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .blog h3 {
+            margin-bottom: 10px;
+        }
+
+        .blog p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .date {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .empty {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>📚 All Blogs</h2>
+        <!-- CORRECT BACK LINK -->
+        <a href="../F3/blog.html" class="back-btn">⬅ Back to Write Blog</a>
+    </header>
+
+    <div class="container" id="blogContainer"></div>
+
+    <script>
+        const blogContainer = document.getElementById("blogContainer");
+        const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+        if (blogs.length === 0) {
+            blogContainer.innerHTML = `
+                <div class="empty">
+                    No blogs found.<br>
+                    <a href="../F3/blog.html">Write your first blog</a>
+                </div>`;
+        } else {
+            blogs.slice().reverse().forEach(blog => {
+                const div = document.createElement("div");
+                div.className = "blog";
+
+                div.innerHTML = `
+                    <h3>${blog.title}</h3>
+                    <p>${blog.content}</p>
+                    <div class="date">Posted on: ${blog.date}</div>
+                `;
+
+                blogContainer.appendChild(div);
+            });
+        }
+    </script>
+
+</body>
+</html>
