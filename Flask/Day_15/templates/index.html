@@ -1,0 +1,55 @@
+
+
+
+
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <!-- Hero Section -->
+    <div class="text-center">
+        <h1 class="display-4">Welcome to MyWebsite</h1>
+        <p class="lead">
+            We provide modern solutions to help your business grow.
+        </p>
+
+        <a href="/signup" class="btn btn-primary btn-lg mt-3">
+            Get Started
+        </a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mt-5 text-center">
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h5>Fast</h5>
+                <p>Quick and efficient performance.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h5>Secure</h5>
+                <p>Strong security and data protection.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h5>Reliable</h5>
+                <p>High availability and stable services.</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+

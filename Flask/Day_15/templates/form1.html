@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GET Request Letter Display</title>
+</head>
+<body>
+    
+    <h2>Enter Your Name</h2>
+
+    <!-- GET form -->
+    <form method="GET">
+        <input type="text" name="name" placeholder="Enter name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+    {% if name %}
+        <h3>Letters in your name:</h3>
+
+        {% for letter in name %}
+            <p>{{ letter }}</p>
+        {% endfor %}
+
+    {% endif %}
+
+</body>
+</html>

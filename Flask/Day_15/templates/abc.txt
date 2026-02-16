@@ -1,0 +1,14 @@
+
+{% for variable in range(5)%}
+
+{% endfor %}
+
+<head>
+<title>My Page </title>
+<link rel ="stylesheet"
+href="{{url_for('static', filename='css/style.css')}}">
+
+</head>
+
+<script src="{{url_for('static', filename='JavaScript/script.js')}}">
+</script>
