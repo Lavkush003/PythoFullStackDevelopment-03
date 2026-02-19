@@ -1,0 +1,63 @@
+
+{% extends "base.html" %}
+
+{% block title %}Todo List{% endblock %}
+
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-header bg-success text-white">
+        <h4 class="mb-0">Todo List</h4>
+    </div>
+
+    <div class="card-body">
+
+        <!-- Add Task Form -->
+        <form method="POST" class="input-group mb-4">
+            {{ form.hidden_tag() }}
+            {{ form.task(class="form-control", placeholder="Enter a task") }}
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+
+        <!-- Task List -->
+        {% if todos %}
+            <ul class="list-group">
+                {% for todo in todos %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+
+                        <!-- Task Text -->
+                        <span style="text-decoration: {% if todo.completed %}line-through{% endif %};">
+                            {{ todo.task }}
+                        </span>
+
+                        <!-- Buttons -->
+                        <div>
+                            <a href="{{ url_for('main.toggle', id=todo.id) }}"
+                               class="btn btn-sm btn-secondary">
+                                {% if todo.completed %}Undo{% else %}Complete{% endif %}
+                            </a>
+
+                            <a href="{{ url_for('main.edit', id=todo.id) }}"
+                               class="btn btn-sm btn-info">
+                                Edit
+                            </a>
+
+                            <a href="{{ url_for('main.delete', id=todo.id) }}"
+                               class="btn btn-sm btn-danger">
+                                Delete
+                            </a>
+                        </div>
+
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="text-center text-muted">
+                No tasks added yet.
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
