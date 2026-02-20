@@ -1,0 +1,65 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+.hero-section {
+    min-height: 90vh;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 50px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 750px;
+}
+
+.glass-card hr {
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-card .btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.glass-card .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+</style>
+
+<div class="hero-section">
+    <div class="glass-card">
+
+        <h1 class="display-4 fw-bold">Welcome to the Flask Auth!</h1>
+
+        <hr class="my-4">
+
+        {% if current_user.is_authenticated %}
+        <p class="lead">Hello, {{ current_user.username }}! You are logged in.</p>
+        <a class="btn btn-light btn-lg mt-3" href="{{ url_for('welcome_user') }}">Go to Dashboard</a>
+        {% else %}
+        <p class="lead">If you have an account, you can log in. Otherwise, register to get started!</p>
+        <div class="mt-4">
+            <a class="btn btn-light btn-lg me-3" href="{{ url_for('login') }}">Login</a>
+            <a class="btn btn-outline-light btn-lg" href="{{ url_for('register') }}">Register</a>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
